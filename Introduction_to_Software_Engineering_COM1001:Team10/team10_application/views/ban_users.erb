@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Banning/Unban</title>
+    <link rel="stylesheet"  href="style/general_style.css">
+</head>
+<body>
+  <h1>Banning/Unban</h1>
+  <table>
+    <tr>
+      <th>User ID</th>   
+      <th>Username</th>
+      <th>Email</th>
+      <th>State</th>
+    </tr>
+  <% @user.each do |user| %>
+    <tr>
+      <td><%= h user.userID %></td>
+      <td><%= h user.username %></td>
+      <td><%= h user.email %></td>
+      <td>
+        <% if user.is_banned == 1 %>
+          Banned
+        <% else %>
+          Active
+        <% end %>
+      </td>
+      <td>
+        <% if user.is_banned == 1 %>
+          <a href ="/banning/unban?id=<%= h user.userID%>">
+          <button type="submit">Unban</button>
+          </a>       
+        <% else %>
+          <a href="/banning/ban?id=<%= h user.userID%>">
+          <button type="submit">ban</button>
+          </a>
+        <% end %>
+    </td>
+    </tr>
+  <% end %> 
+  </table>
+</body>
+</html>

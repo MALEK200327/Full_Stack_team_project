@@ -1,0 +1,24 @@
+
+<% @subtitle = "Add Course" %>
+
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet"  href="style/course_form.css">
+  <head>
+    <title><%= @subtitle %></title>
+  </head>
+  <body>
+  <h1><%= @subtitle %></h1>
+
+<% unless @course.errors.size.zero? %>
+    <p><strong class="error">Please correct the errors below: </strong></p>
+<% end %>
+
+<form method="post">
+    <%= erb :"common/courses_form" %>
+</form>
+
+<p class="navigation">Return to <a href="/searchcourse">Course Search</a>.</p>
+
+</body>
+</html>

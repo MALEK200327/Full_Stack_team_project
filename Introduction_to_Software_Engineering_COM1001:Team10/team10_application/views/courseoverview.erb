@@ -1,0 +1,29 @@
+<html>
+<link rel="stylesheet" href="style/course_overview.css">
+  <head>
+    <title>Course Overview</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Course Overview</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Course Title</th>
+            <th>Description</th>
+            <th>Privacy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= h @course.course_title %></td>
+            <td><%= h @course.description %></td>
+            <td><%= h @course.private %></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="footer"><a href="/usercourses">Search For Courses</a></p>
+    </div>
+  </body>
+</html>
+

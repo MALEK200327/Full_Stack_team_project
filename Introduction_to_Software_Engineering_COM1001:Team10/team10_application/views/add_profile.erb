@@ -1,0 +1,40 @@
+
+<% @subtitle = "Add Profile" %>
+
+<html>
+<head>
+    <title>User Database :: <%= @subtitle %></title>
+    <link rel="stylesheet"  href="style/user_form.css">
+</head>
+<body>
+<h1><%= @subtitle %></h1>
+
+
+<% unless @user.errors.size.zero? %>
+    <p><strong class="error">Please correct the errors below:</strong></p>
+<% end %>
+
+
+<form method="post">
+    <%= erb :"common/user_form" %>
+     <label for="role">Role:</label>
+        <select id="role" name="role">
+            <option value="admin">admin</option>
+            <option value="learner">learner</option>
+            <option value="moderator">moderator</option>
+            <option value="manager">manager</option>
+        </select><br><br>
+</form>
+
+</form>
+
+<th>
+    <tr><a href=@user.staffload><button></button></tr>
+    <tr><button></button></tr>
+    <tr><button></button></tr>
+</th>
+
+<p class="navigation">Return to <a href="/login">Login</a>.</p>
+
+</body>
+</html>

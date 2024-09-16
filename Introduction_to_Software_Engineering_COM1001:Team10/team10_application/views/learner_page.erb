@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>learner Page Page</title>
+    <link rel="stylesheet" href="style/general_style.css">
+</head>
+<body>
+	<div class="logo">Edflix</div>
+
+	<nav>
+		<a href="/logout">Login/Out</a>
+	</nav>
+
+	<section>
+		<h2>Courses</h2>
+        <p>Click to see and join courses</p>
+		<a href="/usercourses">Go</a>
+	</section>
+
+	<section>
+		<h2>reporting a problem</h2>
+		<p>Click to report a problem</p>
+		<a href="/report_form">Go</a>
+	</section>
+
+	<section>
+		<h2>reset your password</h2>
+		<p>Click to reset your password</p>
+		<a href="/passwordresest">Go</a>
+	</section>
+	
+	<section>
+		<h2>Edit Profile</h2>
+		<p>Click to edit your profile</p>
+		<a href="/edit_profile/<%= h session[:user_id]%>">Go</a>
+	</section>
+</body>
+</html>

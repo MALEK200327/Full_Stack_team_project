@@ -1,0 +1,39 @@
+
+<html>
+<link rel="stylesheet"  href="style/search_course.css">
+<% @subtitle = "Search Course" %>
+
+<div class ="navigation">
+  <form>
+    <p>Enter a course name: <p>
+    <input type="text" name="course_search" value="<%= h @course_search %>"/>
+    <input type="submit" value="Submit" /></p>
+  </form>
+
+  <p><a href="/addcourse">Add a new course to the database</a>.</p>
+</div>
+
+<br />
+
+<% if @courses.count > 0 %>
+  <table>
+    <tr>
+      <th>Course ID</th>
+      <th>Course Title</th>
+      <th>Description</th>
+      <th>Private/Public</th>
+    </tr>
+  <% @courses.each do |course| %>
+    <tr>
+      <td><%= h course.courseID %></td>
+      <td><%= h course.course_title %></td>
+      <td><%= h course.description %></td>
+      <td><%= h course.private %></td>
+      <td><a href="/editcourse?id=<%= h course.courseID %>">Edit</a></td>
+    </tr>
+  <% end %>
+  </table>
+<% else %>
+   <p>Your search revealed no courses.</p>
+<% end %>
+</html>

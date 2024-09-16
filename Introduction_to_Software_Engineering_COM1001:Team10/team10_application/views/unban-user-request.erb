@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Request to Unban a User</title>
+    <style>
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Request to Unban a User</h1>
+    <form action="/submit_problem" method="post">      <label for="your_name">Your Name:</label>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" value="<% =params[:name] %>"><br>
+      <span class ="error" id="name_error"><%= @name_error %></span><br>
+      <label for="reason">Reason:</label>
+      <textarea id="reason" name="reason" value="<% =params[:reason] %></textarea><br>
+      <span class="error" id="reason_error"><%= @reason_error %></span><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" value="<% =params[:name] %>"><br>
+      <span class="error" id="email_error"><%= @email_error %></span><br>
+      <input type="submit" value="Submit">
+    </form>
+
+  </body>
+</html>

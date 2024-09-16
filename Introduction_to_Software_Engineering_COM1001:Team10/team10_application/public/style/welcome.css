@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  
+}
+
+body {
+  border-style: solid;
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-top: 5%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-color:#4CAF50;
+}
+
+
+h1, main {
+  font-family: Arial, sans-serif;
+  border-color:#4CAF50;
+  color: black;
+  padding: 20px;
+  display: inline-block;
+  width: auto;
+  border-style: solid;
+}
+
+/* Style form elements */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover{
+    background-colour: #275728;
+}
+
+

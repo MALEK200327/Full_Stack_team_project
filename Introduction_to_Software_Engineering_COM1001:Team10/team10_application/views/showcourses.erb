@@ -1,0 +1,29 @@
+
+<html>
+<link rel="stylesheet"  href="style/course_form.css">
+<% @subtitle = "Courses " %>
+
+<% if @logged_in == false %>
+  <h1>Please log in to view this page.</h1> 
+  <p><a href="/login">Login</a> or <a href="/add_profile">signup</a>.</p>
+<% else %>
+  <table>
+    <tr>
+      <th>Course Title</th>
+    </tr>
+    <% if @usercourses.empty? %>
+      <tr>
+        <td><p>No courses found.</p></td>
+      </tr>
+    <% else %>
+      <% @usercourses.each do |course| %>
+        <tr>
+          <td><p>Title: <%= course.course.course_title %> Description: <%= course.course.description %></p></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+<% end %>
+<p><a href="/demo">Home</a>.</p>
+</html>
+

@@ -1,0 +1,20 @@
+<html>
+<link rel="stylesheet"  href="style/login_page.css">
+  <head>
+    <title>Login Page</title>
+  </head>
+
+  <body>
+
+    <% if @login_succesful %>
+      <p>Login Succesful!</p>
+    <% else %>
+      <p>No Account Found</p>
+    <% end %>
+
+    <form method="get" action="/login" >
+      <p><input type="submit" value="Return to Login" ></p>
+    </form>
+
+  </body>
+</html>

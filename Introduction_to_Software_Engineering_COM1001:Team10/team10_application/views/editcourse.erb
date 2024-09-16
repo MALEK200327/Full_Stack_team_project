@@ -1,0 +1,40 @@
+<% @subtitle = "Edit Course" %>
+
+<html>
+<link rel="stylesheet"  href="style/course_form.css">
+  <head>
+    <title>Edit Course</title>
+  </head>
+
+  <body>
+    <h1><%= @subtitle %></h1>
+
+<% if @course.nil? %>
+
+    <p class="error"><strong>Course Does Not Exist!</strong></p>
+
+<% else %>    
+
+    <% unless @course.errors.size.zero? %>
+        <p><strong class="error">Please correct the errors below:</strong></p>
+    <% end %>
+
+    <form method="post">
+        <input type="hidden" name="id" value="<%=  params["id"] %>" />
+        <%= erb :"common/courses_form" %>
+    </form>
+
+    <div class="warning">
+        <p><strong>Caution! Once a course is deleted, it cannot be restored.</strong></p>
+
+        <form method="post" action="/deletecourse">
+            <input type="hidden" name="id" value="<%= params["id"] %>" />
+            <input type="submit" value="Delete" />
+        </form>
+
+        <% end %>
+
+    <p class="navigation">Return to <a href="/searchcourse">Course Search</a>.</p>
+
+</body>
+</html>

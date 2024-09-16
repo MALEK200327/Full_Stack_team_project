@@ -1,0 +1,43 @@
+<% @subtitle = "Edit User" %>
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User Database :: <%= @subtitle %></title>
+        <link rel="stylesheet"  href="style/user_form.css">
+    </head>
+    <body>
+        <h1><%= @subtitle %></h1>
+
+        <% if @user.nil? %>
+
+            <p class="error"><strong>Unknown user</strong></p>
+
+        <% else %>    
+
+            <% unless @user.errors.size.zero? %>
+                <p><strong class="error">Please correct the errors below:</strong></p>
+            <% end %>
+
+            <form method="post">
+                <input type="hidden" name="id" value="<%= @user.userID %>" />
+                <%= erb :"common/user_form" %>
+            </form>
+
+            <div class="warning">
+                <p><strong>WARNING! Deleting a record cannot be undone.</strong></p>
+
+                <form method="post" action="/delete_profile">
+                    <input type="hidden" name="id" value="<%= @user.userID %>" />
+                    <input type="submit" value="Delete" />
+                </form>
+            </div>
+
+        <% end %>
+
+        <p class="navigation">Return to <a href="/search_profile">User Search</a>.</p>
+    </body>
+</html>

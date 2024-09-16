@@ -1,0 +1,53 @@
+<% @subtitle = "User profile page" %>
+<html>
+<link rel="stylesheet"  href="style/search_profile.css">
+<head>
+    <title>User Database :: <%= @subtitle %></title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+<h1><%= @subtitle %></h1>
+<h1>Search</h1>
+
+<div class="navigation">
+  <form>
+    <p>Enter a email to show only users for that email: 
+    <input type="text" name="email_search" value="<%= h @email_search %>"/>
+    <input type="submit" value="Submit" /></p>
+  </form>
+
+  <p><a href="/add_profile">Add a new user to the database</a>.</p>
+</div>
+
+<br />
+
+<% if @users.count > 0 %>
+  <table>
+    <tr>
+      <th>User ID</th>   
+      <th>First Name</th>
+      <th>Surname</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>suggested_courses</th>
+    </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= h user.userID %></td>
+      <td><%= h user.first_name %></td>
+      <td><%= h user.surname %></td>
+      <td><%= h user.username %></td>
+      <td><%= h user.email %></td>
+      <td><%= h user.password %></td>
+      <td><%= h user.suggested_courses %></td>
+      <td><a href="/edit_profile/<%= h user.userID %>">Edit</a></td>
+    </tr>
+  <% end %> 
+  </table>
+<% else %>
+  <p>Your search revealed no users.</p>
+<% end %>
+
+</body>
+</html>

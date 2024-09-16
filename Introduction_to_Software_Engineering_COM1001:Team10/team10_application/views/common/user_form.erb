@@ -1,0 +1,65 @@
+<html>
+<link rel="stylesheet"  href="style/user_form.css">
+<p class="label">First name</p>
+<p class="field"><input type="text" name="first_name" value="<%= h @user.first_name %>" /></p>
+<% if @user.errors.include?("first_name") %>
+  <% @user.errors["first_name"].each do |error| %>
+    <p class="error"><strong>First name <%= error %></strong></p>
+  <% end %>
+<% end %>
+
+<p class="label">Surname</p>
+<p class="field"><input type="text" name="surname" value="<%= h @user.surname %>" /></p>
+<% if @user.errors.include?("surname") %>
+  <% @user.errors["surname"].each do |error| %>
+    <p class="error"><strong>Surname <%= error %></strong></p>
+  <% end %>
+<% end %>
+
+<p class="label">Username</p>
+<p class="field"><input type="text" name="username" value="<%= h @user.username %>" /></p>
+<% if @user.errors.include?("username") %>
+  <% @user.errors["username"].each do |error| %>
+    <p class="error"><strong>Username <%= error %></strong></p>
+  <% end %>
+<% end %>
+
+<p class="label">Email</p>
+<p class="field"><input type="text" name="email" value="<%= h @user.email %>" /></p>
+<% if @user.errors.include?("email") %>
+  <% @user.errors["email"].each do |error| %>
+    <p class="error"><strong>Email <%= error %></strong></p>
+  <% end %>
+<% end %>
+
+<p class="label">Password</p>
+<p class="field"><input type="text" name="password" value="<%= h @user.password %>" /></p>
+<% if @user.errors.include?("password") %>
+  <% @user.errors["password"].each do |error| %>
+    <p class="error"><strong>Password <%= error %></strong></p>
+  <% end %>
+<% end %>
+
+
+<p class="label">Select Course Interested In</p>
+<label>Course:</label>
+<input type="checkbox" name="course1">
+<label for="suggested_courses">Architecture</label>
+<input type="checkbox" name="course2">
+<label for="suggested_courses">Business Management</label>
+<input type="checkbox" name="course3">
+<label for="suggested_courses">Engineering</label>
+<input type="checkbox" name="course4">
+<label for="suggested_courses">Economics</label>
+<input type="checkbox" name="course5">
+<label for="suggested_courses">Law</label>
+<input type="checkbox" name="course6">
+<label for="suggested_courses">Medicine</label>
+<input type="checkbox" name="course7">
+<label for="suggested_courses">Social Science& Arts</label>
+
+
+
+
+<p class="submit"><input type="submit" value="Submit" /></p>
+</html>

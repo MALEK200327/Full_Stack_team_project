@@ -1,0 +1,37 @@
+<html>
+<link rel="stylesheet"  href="style/login_page.css">
+  <head>
+    <title>Login Page</title>
+  </head>
+
+  <body>
+
+    <form method="post" action="/login-check">
+
+      <p>Username: <br />
+      <input type="text" name="uname_field" />
+      </p>
+      <% if (@blank_errors==1||@blank_errors==2) %>
+        <p>Please enter a username</p>
+      <% end %>
+
+      <p>Password: <br />
+      <input type="password" name="pass_field" />
+      </p>
+      <% if (@blank_errors==1||@blank_errors==3) %>
+        <p>Please enter a password</p>
+      <% end %>
+
+        <% if (@check_ban == true) %>
+            <p>You are not allowed to log in to the page</p>
+            <a href = "/unban_user_request">appeal</a>
+        <% end %>
+      <p><input type="submit" value="Submit" ></p>
+
+      <p class="navigation">Or <a href="/add_profile">Make New Account</a>.</p>
+      <p class="navigation">Or <a href="/passwordresest">Forgot Password?</a>.</p>
+    
+    </form>
+
+  </body>
+</html>

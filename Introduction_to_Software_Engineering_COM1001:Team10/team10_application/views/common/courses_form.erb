@@ -1,0 +1,38 @@
+
+<html>
+<link rel="stylesheet"  href="style/course_form.css">
+<p class="label">Course Title</p>
+<p class="field"><input type="text" name="course_title" value="<%= h @course.course_title %>" /></p>
+<% if @course.errors.include?("course_title") %>
+  <% @course.errors["course_title"].each do |error| %>
+    <p class="error"><strong>Course Title <%= error %></strong></p>
+  <% end %>
+<% end %>
+
+<p class="label">Description</p>
+<p class="field"><input type="text" name="description" value="<%= h @course.description %>" /></p>
+<% if @course.errors.include?("description") %>
+  <% @course.errors["description"].each do |error| %>
+    <p class="error"><strong>Description <%= error %></strong></p>
+  <% end %>
+<% end %>
+
+<p class="label">Course URL</p>
+<p class="field"><input type="text" name="url" value="<%= h @course.url %>" /></p>
+<% if @course.errors.include?("url") %>
+  <% @course.errors["url"].each do |error| %>
+    <p class="error"><strong>Course Url <%= error %></strong></p>
+  <% end %>
+<% end %> 
+
+<p class="label">Privacy</p>
+<p class="field"><input type="text" name="private" value="<%= h @course.private %>" /></p>
+<% if @course.errors.include?("private") %>
+  <% @course.errors["private"].each do |error| %>
+    <p class="error"><strong>Privacy <%= error %></strong></p>
+  <% end %>
+<% end %> 
+
+
+<p class="submit"><input type="submit" value="Submit" /></p>
+</html>

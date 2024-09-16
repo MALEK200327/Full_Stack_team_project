@@ -1,0 +1,24 @@
+<html>
+  <link rel="stylesheet"  href="style/course_form.css">
+  <% @subtitle = "Join a Course" %>
+
+  <% if @logged_in %>
+    <h2>Select a Course to Join</h2>
+
+    <form method="post" action="/joincourse">
+      <select name="course_id">
+        <% @courses.each do |course| %>
+          <option value="<%= course.courseID %>"><%= course.course_title %></option>
+        <% end %>
+      </select>
+      <input type="submit" value="Join" id = "submit">
+    </form>
+
+  <% else %>
+    <h2>You must be logged in to join a course.</h2>
+    <p><a href="/login">Login</a> or <a href="/add_profile">signup</a>.</p>
+  <% end %>
+
+  <p><a href="/learner_page">Back to Homepage</a>.</p>
+  <p><a></a></p>
+</html>
